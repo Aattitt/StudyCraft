@@ -1,0 +1,715 @@
+/* ===== Common Styles ===== */
+:root {
+  --primary-color: #4a69bd;
+  --primary-light: #6a89cc;
+  --secondary-color: #e67e22;
+  --success-color: #2ecc71;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
+  --border-color: #dfe6e9;
+  --text-color: #34495e;
+  --background-color: #f5f6fa;
+  --card-background: #ffffff;
+  --hover-color: #f1f2f6;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h2, h3, h4 {
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+}
+
+.tab-content {
+  padding: 1.5rem;
+  background-color: var(--background-color);
+  min-height: calc(100vh - 150px);
+}
+
+/* ===== Grades Tab Styles ===== */
+#grades {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.semester-selection {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.semester-selection label {
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+.semester-selection select {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  font-size: 1rem;
+}
+
+.grades-overview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.grades-summary {
+  flex: 1;
+  min-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.summary-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.gpa-display, .credits-display, .ranking-display {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.gpa-value, .credits-current, .ranking-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.gpa-scale, .credits-total {
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-left: 0.25rem;
+}
+
+.gpa-letter, .credits-percent, .ranking-details {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.grades-chart {
+  flex: 1;
+  min-width: 300px;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container {
+  height: 200px;
+  width: 100%;
+}
+
+.course-grades-container {
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+.course-grades-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.course-grades-table th, 
+.course-grades-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.course-grades-table th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+}
+
+.course-grades-table tbody tr:hover {
+  background-color: var(--hover-color);
+}
+
+.course-grades-table tfoot {
+  font-weight: 700;
+  background-color: var(--light-color);
+}
+
+.grade-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  color: white;
+}
+
+.grade-a {
+  background-color: #27ae60;
+}
+
+.grade-b {
+  background-color: #3498db;
+}
+
+.grade-c {
+  background-color: #f39c12;
+}
+
+.grade-d {
+  background-color: #e74c3c;
+}
+
+.grade-f {
+  background-color: #c0392b;
+}
+
+.grade-distribution {
+  margin-bottom: 2rem;
+}
+
+.distribution-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.distribution-chart {
+  flex: 1;
+  min-width: 300px;
+  height: 200px;
+}
+
+.distribution-legend {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.a-color {
+  background-color: #27ae60;
+}
+
+.b-color {
+  background-color: #3498db;
+}
+
+.c-color {
+  background-color: #f39c12;
+}
+
+.d-color {
+  background-color: #e74c3c;
+}
+
+.f-color {
+  background-color: #c0392b;
+}
+
+.legend-label {
+  flex: 1;
+}
+
+.legend-count {
+  font-weight: 500;
+}
+
+.academic-standing {
+  margin-bottom: 2rem;
+}
+
+.standing-info {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.standing-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.standing-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.standing-indicator.good {
+  background-color: var(--success-color);
+}
+
+.standing-indicator.warning {
+  background-color: var(--warning-color);
+}
+
+.standing-indicator.danger {
+  background-color: var(--danger-color);
+}
+
+.standing-text {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.standing-description {
+  margin-bottom: 1rem;
+}
+
+.standing-requirements h4 {
+  margin-bottom: 0.5rem;
+}
+
+.standing-requirements ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+/* ===== Calendar Tab Styles ===== */
+#calendar {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.calendar-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.calendar-navigation h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  min-width: 140px;
+  text-align: center;
+}
+
+.calendar-nav-btn {
+  background-color: var(--light-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.calendar-nav-btn:hover {
+  background-color: var(--border-color);
+}
+
+.calendar-view-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-btn {
+  background-color: var(--light-color);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.view-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.view-btn:hover:not(.active) {
+  background-color: var(--border-color);
+}
+
+.calendar-container {
+  margin-bottom: 2rem;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.month-view, .agenda-view {
+  display: none;
+}
+
+.month-view.active-view, .agenda-view.active-view {
+  display: block;
+}
+
+.calendar-grid {
+  width: 100%;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.calendar-cell {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  min-height: 100px;
+  position: relative;
+}
+
+.calendar-header .calendar-cell {
+  text-align: center;
+  font-weight: 500;
+  padding: 0.75rem;
+  min-height: auto;
+  border-bottom: none;
+}
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-cell.prev-month, .calendar-cell.next-month {
+  color: #b2bec3;
+  background-color: #f8f9fa;
+}
+
+.calendar-cell.current-day {
+  background-color: #e3f2fd;
+  font-weight: 700;
+}
+
+.event {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.4rem;
+  margin-top: 0.25rem;
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.class-event {
+  background-color: #a29bfe;
+  color: #2c3e50;
+}
+
+.assignment-event {
+  background-color: #ff7675;
+  color: #2c3e50;
+}
+
+.exam-event {
+  background-color: #fab1a0;
+  color: #2c3e50;
+}
+
+.campus-event {
+  background-color: #81ecec;
+  color: #2c3e50;
+}
+
+.event-list {
+  padding: 1.25rem;
+}
+
+.event-group {
+  margin-bottom: 1.5rem;
+}
+
+.event-date {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.event-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.event-item.deadline {
+  background-color: rgba(255, 118, 117, 0.1);
+  border-left: 3px solid #ff7675;
+}
+
+.event-item.exam {
+  background-color: rgba(250, 177, 160, 0.1);
+  border-left: 3px solid #fab1a0;
+}
+
+.event-time {
+  min-width: 120px;
+  font-weight: 500;
+}
+
+.event-title {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.event-location {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.event-legend {
+  margin-bottom: 1.5rem;
+}
+
+.legend-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.class-color {
+  background-color: #a29bfe;
+}
+
+.assignment-color {
+  background-color: #ff7675;
+}
+
+.exam-color {
+  background-color: #fab1a0;
+}
+
+.campus-color {
+  background-color: #81ecec;
+}
+
+.add-event-container {
+  text-align: right;
+}
+
+.add-event-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.add-event-btn:hover {
+  background-color: var(--primary-light);
+}
+
+.add-icon {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* ===== Profile Tab Styles ===== */
+#profile {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile-container {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.profile-info h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.profile-info p {
+  margin: 0.25rem 0 0;
+  opacity: 0.8;
+}
+
+.edit-profile-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-profile-btn:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.profile-details {
+  padding: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.detail-label {
+  flex: 1;
+  font-weight: 500;
+  color: #7f8c8d;
+}
+
+.detail-value {
+  flex: 2;
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 768px) {
+  .grades-overview {
+    flex-direction: column;
+  }
+  
+  .distribution-container {
+    flex-direction: column;
+  }
+  
+  .calendar-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .calendar-navigation {
+    justify-content: center;
+  }
+  
+  .calendar-view-options {
+    justify-content: center;
+  }
+  
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .edit-profile-btn {
+    position: static;
+    margin-top: 1rem;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+  }
+  
+  .detail-label {
+    margin-bottom: 0.25rem;
+  }
+}
