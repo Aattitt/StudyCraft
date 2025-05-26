@@ -55,17 +55,15 @@ C:/xampp/htdocs/StudyCraft
 
 ### SQL Setup
 
-\`\`\`sql
-CREATE TABLE \`users\` (
-  \`id\` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  \`firstName\` varchar(50) NOT NULL,
-  \`lastName\` varchar(50) NOT NULL,
-  \`email\` varchar(100) NOT NULL UNIQUE,
-  \`password\` varchar(32) NOT NULL,
-  \`userRole\` varchar(20) DEFAULT 'student',
-  \`createdAt\` timestamp DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL UNIQUE,
+  `password` varchar(32) NOT NULL,
+  `userRole` varchar(20) DEFAULT 'student',
+  `createdAt` timestamp DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-\`\`\`
 
 ---
 
