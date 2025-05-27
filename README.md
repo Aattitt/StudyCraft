@@ -111,7 +111,7 @@ StudyCraft/
 
 ## Usage
 
-- Go to \`http://localhost/StudyCraft/RegLog.php` in your browser
+- Go to http://localhost/StudyCraft/RegLog.php in your browser
 - Register/Login as a user
 - Use dashboard features based on your role
 
