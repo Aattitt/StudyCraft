@@ -32,18 +32,23 @@ Follow these steps to get the project up and running locally.
 
 1. **Clone or download the repo**
 
-\`\`\`bash
-git clone https://github.com/Aattitt/StudyCraft.git
-\`\`\`
+bash
+
+git clone 
+
+https://github.com/Aattitt/StudyCraft.git
+
+
 
 Or download the ZIP and extract it.
 
 2. **Move project to server root**
 
 If you're using XAMPP, move the folder to:
-\`\`\`
+
+
 C:/xampp/htdocs/StudyCraft
-\`\`\`
+
 
 3. **Start Apache & MySQL from XAMPP**
 
@@ -69,25 +74,36 @@ CREATE TABLE `users` (
 
 ### File Structure
 
-\`\`\`
+
 StudyCraft/
+
 ├── admindashboard.php
+
 ├── connect.php
+
 ├── courses_assignments.css
+
 ├── index.php
+
 ├── logout.php
+
 ├── profile.css
+
 ├── RegLog.php
+
 ├── studentdashboard.php
+
 ├── style.css
+
 └── teacherdashboard.php
-\`\`\`
+
+
 
 ---
 
 ## Usage
 
-- Go to \`http://localhost/StudyCraft/\` in your browser
+- Go to \`http://localhost/StudyCraft/RegLog.php` in your browser
 - Register/Login as a user
 - Use dashboard features based on your role
 
